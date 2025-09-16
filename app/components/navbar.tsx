@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { SidebarTrigger } from '@/components/ui/sidebar';
-import { FaArrowPointer, FaMagnifyingGlass } from 'react-icons/fa6';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 const links = [
   { name: 'NEW ARRIVAL', href: '/shop/new-arrival' },
