@@ -38,8 +38,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
-      <div className="flex justify-between w-screen px-8 py-4 relative h-fit items-center">
+    <div className="w-full">
+      <div className="flex justify-between w-screen px-8 py-4 fixed h-fit items-center bg-white">
         <div>
           <Link href="/">
             <span className="font-extrabold text-4xl italic">BLOCKRAVE.</span>
@@ -74,7 +74,8 @@ export default function Navbar() {
         open={open}
         setOpen={setOpen}
       />
-    </>
+      <Banner />
+    </div>
   );
 }
 
@@ -85,18 +86,12 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import {
-  FaArrowAltCircleRight,
-  FaArrowAltCircleUp,
-  FaHamburger,
-} from 'react-icons/fa';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import { link } from 'fs';
 import { Separator } from '@/components/ui/separator';
+import Banner from './home/Banner';
 
 function SearchModal({
   open,

@@ -26,16 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <SidebarProvider defaultOpen={false}>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-        >
-          <ShoppingCart />
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+      >
+        <SidebarProvider defaultOpen={false}>
           <Navbar />
-          {children}
-        </body>
-      </html>
-    </SidebarProvider>
+          <ShoppingCart />
+        </SidebarProvider>
+        <div>{children}</div>
+      </body>
+    </html>
   );
 }
