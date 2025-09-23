@@ -14,7 +14,7 @@ const links = [
 
 const MobileMenu = () => {
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <DropdownMenu>
         <DropdownMenuTrigger>
           <GiHamburgerMenu />
@@ -22,9 +22,33 @@ const MobileMenu = () => {
         <DropdownMenuContent>
           {links.map((link) => (
             <div key={link.name}>
-              <DropdownMenuItem className="flex justify-between">
-                <Link href={link.href}>{link.name}</Link>{' '}
-                <FaArrowAltCircleRight />
+              <DropdownMenuItem className="py-4">
+                <motion.div
+                  whileHover="hover"
+                  initial="rest"
+                  animate="rest"
+                  className="w-full h-full"
+                >
+                  <Link
+                    className=" flex justify-between gap-10 relative"
+                    href={link.href}
+                  >
+                    {/* Black text (default state) */}
+                    <span className="relative">{link.name}</span>
+                    {/* Blue text (animated on hover) */}
+                    <motion.span
+                      className="absolute left-0 top-0 text-[#0000FF]"
+                      variants={{
+                        rest: { clipPath: 'inset(0 100% 0 0)' },
+                        hover: { clipPath: 'inset(0 0 0 0)' },
+                      }}
+                      transition={{ duration: 0.4, ease: 'easeInOut' }}
+                    >
+                      {link.name}
+                    </motion.span>{' '}
+                    <FaArrowAltCircleRight />
+                  </Link>
+                </motion.div>
               </DropdownMenuItem>
               <Separator></Separator>
             </div>
@@ -47,7 +71,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex gap-4 tracking-wide font-medium items-center">
-          <div className="hidden md:flex gap-4">
+          <div className="hidden lg:flex gap-4">
             {links.map((link) => (
               <Link
                 key={link.name}
