@@ -54,17 +54,38 @@ export default function Navbar() {
                 className="p-2"
                 href={link.href}
               >
-                <motion.span
-                  whileHover={{
-                    color: '#0000FF',
-                    textDecoration: 'underline',
-                    textUnderlineOffset: '6px',
-                    textDecorationColor: '#0000FF',
-                  }}
-                  transition={{ type: 'tween', stiffness: 100, duration: 1.2 }}
+                <motion.div
+                  className="relative"
+                  whileHover="hover"
+                  initial="rest"
+                  animate="rest"
                 >
-                  {link.name}
-                </motion.span>
+                  {/* Black text (default state) */}
+                  <span className="relative">{link.name}</span>
+
+                  {/* Blue text (animated on hover) */}
+                  <motion.span
+                    className="absolute left-0 top-0 text-[#0000FF]"
+                    variants={{
+                      rest: { clipPath: 'inset(0 100% 0 0)' },
+                      hover: { clipPath: 'inset(0 0 0 0)' },
+                    }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                  >
+                    {link.name}
+                  </motion.span>
+
+                  {/* Underline animation */}
+                  <motion.div
+                    className="absolute w-full h-[2px] bg-[#0000FF] bottom-[-4px] left-0"
+                    variants={{
+                      rest: { scaleX: 0 },
+                      hover: { scaleX: 1 },
+                    }}
+                    style={{ originX: 0 }}
+                    transition={{ duration: 0.4, ease: 'easeInOut' }}
+                  />
+                </motion.div>
               </Link>
             ))}
           </div>
