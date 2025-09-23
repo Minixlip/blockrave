@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { FaMagnifyingGlass } from 'react-icons/fa6';
+import { motion } from 'framer-motion';
 
 const links = [
   { name: 'NEW ARRIVAL', href: '/shop/new-arrival' },
@@ -53,10 +54,21 @@ export default function Navbar() {
                 className="p-2"
                 href={link.href}
               >
-                {link.name}
+                <motion.span
+                  whileHover={{
+                    color: '#0000FF',
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '6px',
+                    textDecorationColor: '#0000FF',
+                  }}
+                  transition={{ type: 'tween', stiffness: 100, duration: 1.2 }}
+                >
+                  {link.name}
+                </motion.span>
               </Link>
             ))}
           </div>
+
           <MobileMenu />
           <hr className="text-black font-bold w-3" />
           <button
@@ -66,7 +78,6 @@ export default function Navbar() {
           >
             <FaMagnifyingGlass />
           </button>
-          <SidebarTrigger />
         </div>
       </div>
       {/* Search Modal */}
@@ -74,7 +85,6 @@ export default function Navbar() {
         open={open}
         setOpen={setOpen}
       />
-      <Banner />
     </div>
   );
 }
@@ -91,7 +101,6 @@ import {
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { Separator } from '@/components/ui/separator';
-import Banner from './home/Banner';
 
 function SearchModal({
   open,
@@ -101,25 +110,8 @@ function SearchModal({
   setOpen: (v: boolean) => void;
 }) {
   return (
-    <Sheet
-      open={open}
-      onOpenChange={setOpen}
-    >
-      <SheetContent
-        side="top"
-        className="flex items-center justify-center max-w-md mx-auto mt-32 rounded-lg p-6 bg-background shadow-lg"
-        style={{ left: '40%', transform: 'translateX(-50%)', top: '20%' }}
-      >
-        <div className="relative w-full">
-          <Input
-            placeholder="search product"
-            className="pl-10 pr-4 py-2 w-full"
-          />
-          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none">
-            <FaMagnifyingGlass />
-          </span>
-        </div>
-      </SheetContent>
-    </Sheet>
+    <div>
+      <span>search</span>
+    </div>
   );
 }

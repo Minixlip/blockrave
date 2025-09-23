@@ -5,12 +5,13 @@ import { motion } from 'framer-motion';
 export default function Banner() {
   return (
     <div
-      className="h-[75%] mx-8 flex flex-col justify-end gap-4 rounded-xl px-4 py-4 mt-20"
+      className="min-h-[80vh] mx-8 flex flex-col justify-end gap-4 rounded-xl px-4 py-4 mt-20"
       style={{
         backgroundImage:
           'url(https://framerusercontent.com/images/TIX4p0eytuIUi12fXcUzxh2CSA.jpg?width=2000&height=1029)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center top ',
+        backgroundPosition: 'center ',
+        backgroundRepeat: 'no-repeat',
         color: 'white',
       }}
     >
@@ -25,7 +26,7 @@ export default function Banner() {
       <motion.button
         whileHover={{ gap: '20px', marginLeft: '5px' }}
         transition={{ type: 'spring', stiffness: 300 }}
-        className="bg-blue-600 text-white text-2xl font-semibold py-2 px-4 rounded flex items-center gap-2 w-fit"
+        className="bg-[#0000FF] text-white text-2xl font-semibold py-2 px-4 rounded flex items-center gap-2 w-fit"
       >
         <span>EXPLORE</span>
         <MdArrowOutward />
