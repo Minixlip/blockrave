@@ -15,15 +15,41 @@ export default function Banner() {
         color: 'white',
       }}
     >
-      <span className="text-blue-700 font-bold bg-indigo-200 w-fit p-2">
+      <motion.span
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-blue-700 font-bold bg-indigo-200 w-fit p-2"
+      >
         YEAR-END SALE
-      </span>
-      <h1 className="text-4xl font-bold italic">BLOCKRAVE</h1>
-      <h2 className="text-4xl font-bold">SIGNATURE 25% OFF</h2>
-      <p className="text-lg">
+      </motion.span>
+      <motion.h1
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl font-bold italic"
+      >
+        BLOCKRAVE
+      </motion.h1>
+      <motion.h2
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl font-bold"
+      >
+        SIGNATURE 25% OFF
+      </motion.h2>
+      <motion.p
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-lg"
+      >
         Redefine your look with 25% off for all BLOCKHAUS Signatures outfit
-      </p>
+      </motion.p>
       <motion.button
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
         whileHover={{ gap: '20px', marginLeft: '5px' }}
         transition={{ type: 'spring', stiffness: 300 }}
         className="bg-[#0000FF] text-white text-2xl font-semibold py-2 px-4 rounded flex items-center gap-2 w-fit"
