@@ -73,7 +73,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex justify-between w-screen px-8 py-4 fixed h-fit items-center bg-white top-0">
+    <div className="flex justify-between w-screen px-8 py-4 fixed h-fit items-center bg-white top-0 z-[999]">
       <div>
         <Link href="/">
           <span className="font-extrabold text-4xl italic">BLOCKRAVE.</span>

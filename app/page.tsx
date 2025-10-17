@@ -1,4 +1,5 @@
 import Banner from './components/home/Banner';
+import NewCollectionShowCase from './components/home/NewCollectionShowCase';
 import ShowCase from './components/home/ShowCase';
 
 export default function Home() {
@@ -44,6 +45,7 @@ export default function Home() {
           },
         ]}
       />
+      <NewCollectionShowCase />
     </main>
   );
 }
