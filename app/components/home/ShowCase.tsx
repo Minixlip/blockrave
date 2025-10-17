@@ -38,7 +38,7 @@ export default function ShowCase({ title, description, items }: ShowCaseProps) {
               style={{ backgroundImage: `url(${item.imageUrls[0]})` }}
               onMouseEnter={() => {}}
               onMouseLeave={() => {}}
-              className="flex-1 bg-cover bg-center bg-no-repeat mb-4 rounded cursor-pointer"
+              className="w-full h-[550px] bg-cover bg-center bg-no-repeat mb-4 rounded cursor-pointer"
             ></div>
 
             <div className="mt-auto flex flex-col justify-between gap-2">
@@ -52,6 +52,21 @@ export default function ShowCase({ title, description, items }: ShowCaseProps) {
             </div>
           </div>
         ))}
+      </div>
+      <div className="min-h-[20vh] flex justify-center items-center w-full gap-8 mt-20">
+        <div className="bg-black p-4 font-bold">
+          <span className="text-white text-3xl lg:text-4xl select-none">
+            {' '}
+            DESIGNED FOR THE BOLD.
+          </span>
+        </div>
+        <div className=" w-[40%]">
+          <p className="text-wrap font-light italic text-xl select-none">
+            Explore the newest additions to our Men&#39;s Collection to discover
+            clothing, shoes, bags and accessories featuring signature styles and
+            detailing.
+          </p>
+        </div>
       </div>
     </div>
   );
